@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+  <title>Pocket Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Pocket Tracker - Lookup System </h1>
+      <p>Paste an M-Pesa SMS message, or search by parent name or phone number.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Search student records</h2>
+      <div class="row">
+        <input id="search" type="text" placeholder="Search student, parent, phone..." />
+        <button id="searchButton">Search</button>
+        </div>
+      <p class="hint">Use this to search your Google Sheet records by any known value.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Parse M-Pesa SMS</h2>
+      <textarea id="smsBody" rows="6" placeholder="Paste the full M-Pesa SMS body here"></textarea>
+      <input id="smsSender" type="text" placeholder="Sender name or phone number (optional)" />
+      <button id="parseButton">Parse SMS and Lookup</button>
+      <p class="hint">The app extracts the sender, phone, and M-Pesa transaction details.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Results</h2>
+      <div id="status" class="status">Ready to search.</div>
+      <div id="results"></div>
+    </section>
+
+    <section class="panel instructions">
+      <h2>How to use</h2>
+      <ol>
+        <li>Run the web server with <code>npm install</code> and <code>npm start</code>.</li>
+        <li>Open the page in your browser at <code>http://localhost:3000</code>.</li>
+        <li>Paste the M-Pesa SMS text and optionally the sender, then click <strong>Parse SMS and Lookup</strong>.</li>
+        <li>Or search directly by parent name or phone number.</li>
+        <li>If you want private sheet access, place a service account JSON at <code>service_account.json</code>.</li>
+      </ol>
+    </section>
+  </div>
+</body>
+</html>

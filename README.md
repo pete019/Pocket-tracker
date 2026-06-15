@@ -1,27 +1,32 @@
-# Pocket-tracker
-Pocket Tracker is a school administration and student lookup system designed to help teachers and school staff quickly locate learner records from a centralized database. The system provides a fast and efficient way to search for student information using details such as admission number, student name, class, parent names, or phone number.
+# Student Lookup Web App
 
-The project aims to reduce the time spent searching through physical records and improve access to learner information for administrative and academic purposes. By providing a simple search interface, teachers can quickly retrieve relevant student details whenever needed.
+This project now includes a Node.js web app that parses M-Pesa SMS text and searches a Google Sheets student database.
 
-# Key Features
-1) Fast student record search
-2) Search by admission number, student name, class, parent name, or phone number
-3) Centralized student database
-4) Mobile-friendly and responsive interface
-5) Secure backend API for data retrieval
-6) Integration with cloud-based data sources
+## Features
+- Manual search by student name, parent name, or phone number
+- Paste M-Pesa SMS text, parse sender and phone information, then lookup matching records
+- Optional Africa's Talking webhook endpoint for incoming SMS forwarding
+- Uses a public Google Sheets prototype by default
+- Supports private Google Sheets access if you add `service_account.json`
 
-# Use Cases
-1) Locating student records during school activities
-2) Verifying learner information
-3) Finding parent or guardian contact details
-4) Supporting administrative and academic record management
+## Run locally
+1. Install Node.js if you do not already have it. Use a recent LTS version,  such as Node 18 or newer.
+2. Open a terminal in `c:\Users\chris\OneDrive\Desktop\student_lookup_mvp`
+3. Run `npm install`
+4. Run `npm start`
+5. Open `http://localhost:3000`
 
-# Technologies Used
-1) HTML, CSS, JavaScript
-2) Node.js
-3) Express.js
-Google Sheets API / Cloud-based data storage
-Project Goal
+## Private Google Sheet access
+1. Create a Google service account and download the JSON key.
+2. Save that file as `service_account.json` in the project root.
+3. Share your Google Sheet with the service account email address.
 
-To provide schools with a simple, accessible, and efficient digital solution for managing and retrieving learner information while reducing reliance on manual record searches.
+## Africa's Talking webhook
+1. Configure Africa's Talking incoming SMS to POST to `https://<your-domain>/api/webhook`
+2. The endpoint accepts JSON or form data containing `text` / `message` and `from`
+3. The server parses the SMS and returns matching student records
+
+## Notes
+- The current app uses the prototype sheet from your original link.
+- If the sheet is not public, you must supply a service account JSON file and share the sheet.
+- The app lazy-loads the googleapis library only when a service account is present, so the public-sheet mode works without installing googleapis.
