@@ -4,23 +4,23 @@ Pocket Tracker is a school administration and student lookup system designed to 
 The project aims to reduce the time spent searching through physical records and improve access to learner information for administrative and academic purposes. By providing a simple search interface, teachers can quickly retrieve relevant student details whenever needed.
 
 # Key Features
-~Fast student record search
-~Search by admission number, student name, class, parent name, or phone number
-~Centralized student database
-~Mobile-friendly and responsive interface
-~Secure backend API for data retrieval
-~Integration with cloud-based data sources
+1) Fast student record search
+2) Search by admission number, student name, class, parent name, or phone number
+3) Centralized student database
+4) Mobile-friendly and responsive interface
+5) Secure backend API for data retrieval
+6) Integration with cloud-based data sources
 
 # Use Cases
-~Locating student records during school activities
-~Verifying learner information
-~Finding parent or guardian contact details
-~Supporting administrative and academic record management
+1) Locating student records during school activities
+2) Verifying learner information
+3) Finding parent or guardian contact details
+4) Supporting administrative and academic record management
 
 # Technologies Used
-~HTML, CSS, JavaScript
-~Node.js
-~Express.js
+1) HTML, CSS, JavaScript
+2) Node.js
+3) Express.js
 Google Sheets API / Cloud-based data storage
 Project Goal
 
